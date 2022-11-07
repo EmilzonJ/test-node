@@ -30,6 +30,16 @@ export const insertWord = (word: Word_JSON): void => {
   fs.writeFileSync(path, JSON.stringify(words), { encoding: "utf-8", flag: "w+" });
 };
 
+export const updateWord = (id: number, word: Word_JSON): void => {
+  const path: string = dataPaths.words;
+  const words: Word_JSON[] = getWordsJSON();
+
+  const index = words.findIndex((word) => word.id === id);
+  words[index] = word;
+
+  fs.writeFileSync(path, JSON.stringify(words), { encoding: "utf-8", flag: "w+" });
+}
+
 export const deleteWord = (id: number): void => {
   const path: string = dataPaths.words;
   const words: Word_JSON[] = getWordsJSON();

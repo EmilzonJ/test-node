@@ -30,6 +30,16 @@ export const insertCategory = (category: Category): void => {
   fs.writeFileSync(path, JSON.stringify(categories), { encoding: "utf-8", flag: "w+" });
 };
 
+export const updateCategory = (id: number, category: Category): void => {
+  const path: string = dataPaths.categories;
+  const categories: Category[] = getCategories();
+
+  const index = categories.findIndex((category) => category.id === id);
+  categories[index] = category;
+
+  fs.writeFileSync(path, JSON.stringify(categories), { encoding: "utf-8", flag: "w+" });
+}
+
 export const deleteCategory = (id: number): void => {
   const path: string = dataPaths.categories;
   const categories: Category[] = getCategories();
