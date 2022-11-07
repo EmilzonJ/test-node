@@ -1,0 +1,7 @@
+[
+  { "id": 1, "word": "Juan", "categoryId": 1 },
+  { "id": 2, "word": "Pedro", "categoryId": 1 },
+  { "id": 3, "word": "Rojo", "categoryId": 2 },
+  { "id": 4, "word": "Azul", "categoryId": 2 },
+  { "id": 5, "word": "amarillo", "categoryId": 2 }
+]
